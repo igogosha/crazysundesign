@@ -1,0 +1,3 @@
+crazysun_main_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: CrazysunMainBundle:Default:index }
