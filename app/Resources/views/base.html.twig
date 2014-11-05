@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Crazysundesign.com!{% endblock %}</title>
+        {% block stylesheets %}
+
+            <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+            <!-- BEGIN PLUGIN CSS -->
+            <link href="{{ asset("bundles/crazysunmain/") }}plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen">
+            <link href="{{ asset("bundles/crazysunmain/") }}plugins/jquery-slider/css/jquery.sidr.light.css" rel="stylesheet" type="text/css" media="screen">
+            <!-- END PLUGIN CSS -->
+
+            <!-- BEGIN CORE CSS FRAMEWORK -->
+            <link href="{{ asset("bundles/crazysunmain/") }}plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="{{ asset("bundles/crazysunmain/") }}plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+            <link href="{{ asset("bundles/crazysunmain/") }}plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+            <link href="{{ asset("bundles/crazysunmain/") }}css/animate.min.css" rel="stylesheet" type="text/css">
+            <!-- END CORE CSS FRAMEWORK -->
+
+            <!-- BEGIN CSS TEMPLATE -->
+            <link href="{{ asset("bundles/crazysunmain/") }}css/style.css" rel="stylesheet" type="text/css">
+            <link href="{{ asset("bundles/crazysunmain/") }}css/responsive.css" rel="stylesheet" type="text/css">
+            <link href="{{ asset("bundles/crazysunmain/") }}css/custom-icon-set.css" rel="stylesheet" type="text/css">
+            <!-- END CSS TEMPLATE -->
+
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset("bundles/crazysunmain/") }}js/core.js"></script>
+        {% endblock %}
     </body>
 </html>
