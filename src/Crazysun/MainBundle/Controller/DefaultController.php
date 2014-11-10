@@ -8,6 +8,10 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('CrazysunMainBundle:Default:index.html.twig');
+        $user = $this->get('security.context')->getToken()->getUser();
+
+        return $this->render('CrazysunMainBundle:Default:index.html.twig', array(
+            'user' => $user,
+        ));
     }
 }

@@ -40,15 +40,12 @@
                             </a> </li>
                     </ul>
                     <!-- BEGIN LOGO -->
-                    <a href="index.html"><img width="106" height="21" data-src-retina="assets/img/logo2x.png" data-src="assets/img/logo.png" alt="" class="logo" src="assets/img/logo.png"></a>
+                    <a href=""><img width="106" height="21" data-src-retina="assets/img/logo2x.png" data-src="assets/img/logo.png" alt="" class="logo" src="assets/img/logo.png"></a>
                     <!-- END LOGO -->
                     <ul class="nav pull-right notifcation-center">
                         <li id="header_task_bar" class="dropdown"> <a data-toggle="" class="dropdown-toggle active" href="index.html">
                                 <div class="iconset top-home"></div>
                             </a> </li>
-                        <li id="header_inbox_bar" class="dropdown"> <a class="dropdown-toggle" href="email.html">
-                                <div class="iconset top-messages"></div>
-                                <span id="msgs-badge" class="badge animated bounceIn">2</span> </a></li>
                         <li style="display:none" id="portrait-chat-toggler" class="dropdown"> <a class="chat-menu-toggle" href="#sidr">
                                 <div class="iconset top-chat-white "></div>
                             </a> </li>
@@ -57,31 +54,13 @@
                 <!-- END RESPONSIVE MENU TOGGLER -->
                 <div class="header-quick-nav">
                     <!-- BEGIN TOP NAVIGATION MENU -->
-                    <div class="pull-left">
-                        <ul class="nav quick-section">
-                            <li class="quicklinks"> <a id="layout-condensed-toggle" class="" href="#">
-                                    <div class="iconset top-menu-toggle-dark"></div>
-                                </a> </li>
-                        </ul>
-                        <ul class="nav quick-section">
-                            <li class="quicklinks"> <a class="" href="#">
-                                    <div class="iconset top-reload"></div>
-                                </a> </li>
-                            <li class="quicklinks"> <span class="h-seperate"></span></li>
-                            <li class="quicklinks"> <a class="" href="#">
-                                    <div class="iconset top-tiles"></div>
-                                </a> </li>
-                            <li class="m-r-10 input-prepend inside search-form no-boarder"> <span class="add-on"> <span class="iconset top-search"></span></span>
-                                <input type="text" style="width:250px;" placeholder="Search Dashboard" class="no-boarder " name="">
-                            </li>
-                        </ul>
-                    </div>
+
                     <!-- END TOP NAVIGATION MENU -->
                     <!-- BEGIN CHAT TOGGLER -->
                     <div class="pull-right">
                         <div class="chat-toggler"> <a data-original-title="Notifications" data-toggle="dropdown" data-content="" data-placement="bottom" id="my-task-list" class="dropdown-toggle" href="#">
                                 <div class="user-details">
-                                    <div class="username"> <span class="badge badge-important">3</span> John <span class="bold">Smith</span> </div>
+                                    <div class="username">{% block username %}{% endblock %}</div>
                                 </div>
                                 <div class="iconset top-down-arrow"></div>
                             </a>
@@ -116,35 +95,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="profile-pic"> <img width="35" height="35" data-src-retina="assets/img/profiles/avatar_small2x.jpg" data-src="assets/img/profiles/avatar_small.jpg" alt="" src="assets/img/profiles/avatar_small.jpg"> </div>
+                            {#<div class="profile-pic">#}
+                                {#<img width="35" height="35" data-src-retina="assets/img/profiles/avatar_small2x.jpg" data-src="assets/img/profiles/avatar_small.jpg" alt="" src="assets/img/profiles/avatar_small.jpg">#}
+                            {#</div>#}
                         </div>
-                        <ul class="nav quick-section ">
-                            <li class="quicklinks"> <a id="user-options" href="#" class="dropdown-toggle  pull-right " data-toggle="dropdown">
-                                    <div class="iconset top-settings-dark "></div>
-                                </a>
-                                <ul aria-labelledby="user-options" role="menu" class="dropdown-menu  pull-right">
-                                    <li><a href="user-profile.html"> My Account</a> </li>
-                                    <li><a href="calender.html">My Calendar</a> </li>
-                                    <li><a href="email.html"> My Inbox&nbsp;&nbsp;<span class="badge badge-important animated bounceIn">2</span></a> </li>
-                                    <li class="divider"></li>
-                                    <li><a href="login.html"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>
-                                </ul>
-                            </li>
-                            <li class="quicklinks"> <span class="h-seperate"></span></li>
-                            <li class="quicklinks"> <a class="chat-menu-toggle" href="#sidr" id="chat-menu-toggle">
-                                    <div class="iconset top-chat-dark "><span id="chat-message-count" class="badge badge-important animated bounceIn">1</span></div>
-                                </a>
-                                <div class="simple-chat-popup chat-menu-toggle hide animated fadeOut">
-                                    <div class="simple-chat-popup-arrow"></div>
-                                    <div class="simple-chat-popup-inner">
-                                        <div style="width:100px">
-                                            <div class="semi-bold">David Nester</div>
-                                            <div class="message">Hey you there </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                     <!-- END CHAT TOGGLER -->
                 </div>
@@ -155,24 +109,13 @@
 
         <div class="page-container row">
             <div id="main-menu" class="page-sidebar">
-                <!-- BEGIN MINI-PROFILE -->
-                <div class="user-info-wrapper">
-                    <div class="profile-wrapper">
-                        <img width="69" height="69" data-src-retina="assets/img/profiles/avatar2x.jpg" data-src="assets/img/profiles/avatar.jpg" alt="" src="assets/img/profiles/avatar.jpg">
-                    </div>
-                    <div class="user-info">
-                        <div class="greeting">Welcome</div>
-                        <div class="username">John <span class="semi-bold">Smith</span></div>
-                        <div class="status">Status<a href="#"><div class="status-icon green"></div>Online</a></div>
-                    </div>
-                </div>
-                <!-- END MINI-PROFILE -->
 
                 <!-- BEGIN SIDEBAR MENU -->
-                <p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
+                {#<p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>#}
+                <p></p>
                 <ul>
                     <li class="start active "> <a href="index.html"> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span> <span class="badge badge-important pull-right">5</span></a> </li>
-                    <li class=""> <a href="email.html"> <i class="fa fa-envelope"></i> <span class="title">Email</span>  <span class=" badge badge-disable pull-right ">203</span></a> </li>
+                    {#<li class=""> <a href="email.html"> <i class="fa fa-envelope"></i> <span class="title">Email</span>  <span class=" badge badge-disable pull-right ">203</span></a> </li>#}
                     <li class=""> <a href="../frontend/index.html"> <i class="fa fa-flag"></i>  <span class="title">Frontend</span></a></li>
                     <li class=""> <a href="javascript:;"> <i class="icon-custom-ui"></i> <span class="title">UI Elements</span> <span class="arrow "></span> </a>
                         <ul class="sub-menu">
@@ -238,55 +181,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li id="more-widgets" class="hidden-lg hidden-md hidden-xs"> <a href="javascript:;"> <i class="fa fa-plus"></i></a>
-                        <ul class="sub-menu">
-                            <li class="side-bar-widgets">
-                                <p class="menu-title">FOLDER <span class="pull-right"><a class="create-folder" href="#"><i class="icon-plus"></i></a></span></p>
-                                <ul class="folders">
-                                    <li><a href="#"><div class="status-icon green"></div> My quick tasks </a> </li>
-                                    <li><a href="#"><div class="status-icon red"></div> To do list </a> </li>
-                                    <li><a href="#"><div class="status-icon blue"></div> Projects </a> </li>
-                                    <li style="display:none" class="folder-input"><input type="text" id="folder-name" name="" class="no-boarder folder-name" placeholder="Name of folder"></li>
-                                </ul>
-                                <p class="menu-title">PROJECTS </p>
-                                <div class="status-widget">
-                                    <div class="status-widget-wrapper">
-                                        <div class="title">Freelancer<a class="remove-widget" href="#"><i class="icon-custom-cross"></i></a></div>
-                                        <p>Redesign home page</p>
-                                    </div>
-                                </div>
-                                <div class="status-widget">
-                                    <div class="status-widget-wrapper">
-                                        <div class="title">envato<a class="remove-widget" href="#"><i class="icon-custom-cross"></i></a></div>
-                                        <p>Statistical report</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
-                <div class="side-bar-widgets">
-                    <p class="menu-title">FOLDER <span class="pull-right"><a class="create-folder" href="#"> <i class="fa fa-plus"></i></a></span></p>
-                    <ul class="folders">
-                        <li><a href="#"><div class="status-icon green"></div> My quick tasks </a> </li>
-                        <li><a href="#"><div class="status-icon red"></div> To do list </a> </li>
-                        <li><a href="#"><div class="status-icon blue"></div> Projects </a> </li>
-                        <li style="display:none" class="folder-input"><input type="text" name="" class="no-boarder folder-name" placeholder="Name of folder"></li>
-                    </ul>
-                    <p class="menu-title">PROJECTS </p>
-                    <div class="status-widget">
-                        <div class="status-widget-wrapper">
-                            <div class="title">Freelancer<a class="remove-widget" href="#"><i class="icon-custom-cross"></i></a></div>
-                            <p>Redesign home page</p>
-                        </div>
-                    </div>
-                    <div class="status-widget">
-                        <div class="status-widget-wrapper">
-                            <div class="title">envato<a class="remove-widget" href="#"><i class="icon-custom-cross"></i></a></div>
-                            <p>Statistical report</p>
-                        </div>
-                    </div>
-                </div>
                 <a class="scrollup" href="#" style="display: none;">Scroll</a>
                 <div class="clearfix"></div>
                 <!-- END SIDEBAR MENU -->
