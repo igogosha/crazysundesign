@@ -13,8 +13,9 @@
             <!-- END PLUGIN CSS -->
 
             <!-- BEGIN CORE CSS FRAMEWORK -->
-            <link href="{{ asset("bundles/crazysunmain/") }}plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-            <link href="{{ asset("bundles/crazysunmain/") }}plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+            {#<link href="{{ asset("bundles/crazysunmain/") }}plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">#}
+            {#<link href="{{ asset("bundles/crazysunmain/") }}plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">#}
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" />
             <link href="{{ asset("bundles/crazysunmain/") }}plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
             <link href="{{ asset("bundles/crazysunmain/") }}css/animate.min.css" rel="stylesheet" type="text/css">
             <!-- END CORE CSS FRAMEWORK -->
@@ -58,46 +59,12 @@
                     <!-- END TOP NAVIGATION MENU -->
                     <!-- BEGIN CHAT TOGGLER -->
                     <div class="pull-right">
-                        <div class="chat-toggler"> <a data-original-title="Notifications" data-toggle="dropdown" data-content="" data-placement="bottom" id="my-task-list" class="dropdown-toggle" href="#">
+                        <div class="chat-toggler">
+                            <a data-original-title="Notifications" data-toggle="dropdown" data-content="" data-placement="bottom" id="my-task-list" class="dropdown-toggle" href="#">
                                 <div class="user-details">
-                                    <div class="username">{% block username %}{% endblock %}</div>
+                                    <div class="username">{{ app.user.email }}</div>
                                 </div>
-                                <div class="iconset top-down-arrow"></div>
                             </a>
-                            <div style="display:none" id="notification-list">
-                                <div style="width:300px">
-                                    <div class="notification-messages info">
-                                        <div class="user-profile"> <img width="35" height="35" data-src-retina="assets/img/profiles/d2x.jpg" data-src="assets/img/profiles/d.jpg" alt="" src="assets/img/profiles/d.jpg"> </div>
-                                        <div class="message-wrapper">
-                                            <div class="heading"> David Nester - Commented on your wall </div>
-                                            <div class="description"> Meeting postponed to tomorrow </div>
-                                            <div class="date pull-left"> A min ago </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="notification-messages danger">
-                                        <div class="iconholder"> <i class="icon-warning-sign"></i> </div>
-                                        <div class="message-wrapper">
-                                            <div class="heading"> Server load limited </div>
-                                            <div class="description"> Database server has reached its daily capicity </div>
-                                            <div class="date pull-left"> 2 mins ago </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="notification-messages success">
-                                        <div class="user-profile"> <img width="35" height="35" data-src-retina="assets/img/profiles/h2x.jpg" data-src="assets/img/profiles/h.jpg" alt="" src="assets/img/profiles/h.jpg"> </div>
-                                        <div class="message-wrapper">
-                                            <div class="heading"> You haveve got 150 messages </div>
-                                            <div class="description"> 150 newly unread messages in your inbox </div>
-                                            <div class="date pull-left"> An hour ago </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {#<div class="profile-pic">#}
-                                {#<img width="35" height="35" data-src-retina="assets/img/profiles/avatar_small2x.jpg" data-src="assets/img/profiles/avatar_small.jpg" alt="" src="assets/img/profiles/avatar_small.jpg">#}
-                            {#</div>#}
                         </div>
                     </div>
                     <!-- END CHAT TOGGLER -->
@@ -109,78 +76,27 @@
 
         <div class="page-container row">
             <div id="main-menu" class="page-sidebar">
-
-                <!-- BEGIN SIDEBAR MENU -->
-                {#<p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>#}
                 <p></p>
                 <ul>
-                    <li class="start active "> <a href="index.html"> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span> <span class="badge badge-important pull-right">5</span></a> </li>
-                    {#<li class=""> <a href="email.html"> <i class="fa fa-envelope"></i> <span class="title">Email</span>  <span class=" badge badge-disable pull-right ">203</span></a> </li>#}
-                    <li class=""> <a href="../frontend/index.html"> <i class="fa fa-flag"></i>  <span class="title">Frontend</span></a></li>
-                    <li class=""> <a href="javascript:;"> <i class="icon-custom-ui"></i> <span class="title">UI Elements</span> <span class="arrow "></span> </a>
-                        <ul class="sub-menu">
-                            <li> <a href="typography.html"> Typography </a> </li>
-                            <li> <a href="messages_notifications.html"> Messages &amp; Notifications </a> </li>
-                            <li> <a href="icons.html">Icons</a> </li>
-                            <li> <a href="buttons.html">Buttons</a> </li>
-                            <li> <a href="tabs_accordian.html"> Tabs &amp; Accordions </a> </li>
-                            <li> <a href="sliders.html">Sliders</a> </li>
-                            <li> <a href="group_list.html">Group list </a> </li>
-                        </ul>
+                    <li class="start active">
+                        <a href="">
+                            <i class="icon-custom-home"></i>
+                            <span class="title">Главная</span>
+                        </a>
                     </li>
-                    <li class=""> <a href="javascript:;"> <i class="icon-custom-form"></i> <span class="title">Forms</span> <span class="arrow "></span> </a>
-                        <ul class="sub-menu">
-                            <li> <a href="form_elements.html">Form Elements </a> </li>
-                            <li> <a href="form_validations.html">Form Validations</a> </li>
-                        </ul>
+                    <li class="">
+                        <a href="{{ path('_ad') }}">
+                            <i class="fa fa-stop"></i>
+                            <span class="title">{{ "Тизеры" | trans }}</span>
+                        </a>
                     </li>
-                    <li class=""> <a href="javascript:;"> <i class="icon-custom-portlets"></i> <span class="title">Grids</span> <span class="arrow "></span> </a>
-                        <ul class="sub-menu">
-                            <li> <a href="grids_simple.html">Simple Grids</a> </li>
-                            <li> <a href="grids_draggable.html">Draggable Grids </a> </li>
-                        </ul>
+                    <li class="">
+                        <a href="">
+                            <i class="fa fa-th-large"></i>
+                            <span class="title">{{ "Блоки" | trans }}</span>
+                        </a>
                     </li>
-                    <li class=""> <a href="javascript:;"> <i class="icon-custom-thumb"></i> <span class="title">Tables</span> <span class="arrow "></span> </a>
-                        <ul class="sub-menu">
-                            <li> <a href="tables.html"> Basic Tables </a> </li>
-                            <li> <a href="datatables.html"> Data Tables </a> </li>
-                        </ul>
-                    </li>
-                    <li class=""> <a href="javascript:;"> <i class="icon-custom-map"></i> <span class="title">Maps</span> <span class="arrow "></span> </a>
-                        <ul class="sub-menu">
-                            <li> <a href="google_map.html"> Google Maps </a> </li>
-                            <li> <a href="vector_map.html"> Vector Maps </a> </li>
-                        </ul>
-                    </li>
-                    <li class=""> <a href="charts.html"> <i class="icon-custom-chart"></i> <span class="title">Charts</span> </a> </li>
-                    <li class=""> <a href="javascript:;"> <i class="icon-custom-extra"></i> <span class="title">Extra</span> <span class="arrow "></span> </a>
-                        <ul class="sub-menu">
-                            <li> <a href="user-profile.html"> User Profile </a> </li>
-                            <li> <a href="time_line.html"> Time line </a> </li>
-                            <li> <a href="support_ticket.html"> Support Ticket </a> </li>
-                            <li> <a href="gallery.html"> Gallery</a> </li>
-                            <li class=""><a href="calender.html"> Calendar</a> </li>
-                            <li> <a href="search_results.html"> Search Results </a> </li>
-                            <li> <a href="invoice.html"> Invoice </a> </li>
-                            <li> <a href="404.html"> 404 Page </a> </li>
-                            <li> <a href="500.html"> 500 Page </a> </li>
-                            <li> <a href="blank_template.html"> Blank Page </a> </li>
-                            <li> <a href="login.html"> Login </a> </li>
-                            <li> <a href="login_v2.html">Login v2</a> </li>
-                            <li> <a href="lockscreen.html"> Lockscreen </a> </li>
-                        </ul>
-                    </li>
-                    <li class=""> <a href="javascript:;"> <i class="fa fa-folder-open"></i> <span class="title">Menu Levels</span> <span class="arrow "></span> </a>
-                        <ul class="sub-menu">
-                            <li> <a href="javascript:;"> Level 1 </a> </li>
-                            <li> <a href="javascript:;">  <span class="title">Level 2</span> <span class="arrow "></span> </a>
-                                <ul class="sub-menu">
-                                    <li> <a href="javascript:;"> Sub Menu </a> </li>
-                                    <li> <a href="ujavascript:;"> Sub Menu </a> </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+
                 </ul>
                 <a class="scrollup" href="#" style="display: none;">Scroll</a>
                 <div class="clearfix"></div>

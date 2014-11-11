@@ -1,3 +1,11 @@
 _welcome:
     path:     /
     defaults: { _controller: CrazysunMainBundle:Default:index }
+
+_ad:
+    path: /teasers
+    defaults: { _controller: CrazysunMainBundle:Default:teasers }
+
+_new_ad:
+    path: /teasers/new
+    defaults: { _controller: CrazysunMainBundle:Default:teasersNew }

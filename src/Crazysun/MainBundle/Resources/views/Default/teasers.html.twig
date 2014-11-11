@@ -1,0 +1,97 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="grid simple">
+        <div class="grid-body no-border">
+            <h3>{{ user }}</h3>
+            <p>
+                Old is gold, here is old fashion bordered table, we tweaked it a bit so that the headings looks more prominent.
+                As shown in all of the examples these tables are made to handle extra elements like small buttons, labels and even charts in it.
+                By using the class <code>.table-bordered</code>. You can mix all the above mention classes to bring a unique table design
+            </p>
+            <br>
+            <table class="table table-bordered no-more-tables">
+                <thead>
+                <tr>
+                    <th style="width:1%">
+                        <div class="checkbox check-default">
+                            <input type="checkbox" class="checkall" value="1" id="checkbox20">
+                            <label for="checkbox20"></label>
+                        </div>
+                    </th>
+                    <th style="width:12%" class="text-center">Month</th>
+                    <th style="width:22%" class="text-center">Sales</th>
+                    <th style="width:6%" class="text-center">Graph</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <div class="checkbox check-default">
+                            <input type="checkbox" value="1" id="checkbox21">
+                            <label for="checkbox21"></label>
+                        </div>
+                    </td>
+                    <td class="text-center">January</td>
+                    <td class="text-right">$ 50,000.00</td>
+                    <td class="text-center">
+                        <div data-sparkline-type="bar" data-sparkline-color="#0aa699" class="customer-sparkline"><canvas style="display: inline-block; width: 34px; height: 17px; vertical-align: top;" width="34" height="17"></canvas></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox check-default">
+                            <input type="checkbox" value="1" id="checkbox22">
+                            <label for="checkbox22"></label>
+                        </div>
+                    </td>
+                    <td class="text-center">February</td>
+                    <td class="text-right">$ 10,000.00</td>
+                    <td class="text-center">
+                        <div data-sparkline-color="#f35958" data-sparkline-type="bar" class="customer-sparkline"><canvas style="display: inline-block; width: 34px; height: 17px; vertical-align: top;" width="34" height="17"></canvas></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox check-default">
+                            <input type="checkbox" value="1" id="checkbox23">
+                            <label for="checkbox23"></label>
+                        </div>
+                    </td>
+                    <td class="text-center">March</td>
+                    <td class="text-right">$ 85,000.00</td>
+                    <td class="text-center">
+                        <div data-sparkline-color="#0090d9" data-sparkline-type="bar" class="customer-sparkline"><canvas style="display: inline-block; width: 34px; height: 17px; vertical-align: top;" width="34" height="17"></canvas></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox check-default">
+                            <input type="checkbox" value="1" id="checkbox24">
+                            <label for="checkbox24"></label>
+                        </div>
+                    </td>
+                    <td class="text-center">April</td>
+                    <td class="text-right">$ 56,000.00</td>
+                    <td class="text-center">
+                        <div data-sparkline-color="#fdd01c" data-sparkline-type="bar" class="customer-sparkline"><canvas style="display: inline-block; width: 34px; height: 17px; vertical-align: top;" width="34" height="17"></canvas></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox check-default">
+                            <input type="checkbox" value="1" id="checkbox25">
+                            <label for="checkbox25"></label>
+                        </div>
+                    </td>
+                    <td class="text-center">May</td>
+                    <td class="text-right">$ 98,000.00</td>
+                    <td class="text-center">
+                        <div data-sparkline-color="#0aa699" data-sparkline-type="bar" class="customer-sparkline"><canvas style="display: inline-block; width: 34px; height: 17px; vertical-align: top;" width="34" height="17"></canvas></div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -21,4 +21,11 @@ class DefaultController extends Controller
             'countriesNumber' => count($countries),
         ));
     }
+
+    public function teasersAction() {
+
+        return $this->render('CrazysunMainBundle:Default:teasers.html.twig', array(
+            'user' => 'teasers test'
+        ));
+    }
 }
