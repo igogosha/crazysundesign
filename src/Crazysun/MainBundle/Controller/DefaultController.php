@@ -4,6 +4,8 @@ namespace Crazysun\MainBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Crazysun\MainBundle\Entity\Country;
+use Symfony\Component\HttpFoundation\Request;
+use Crazysun\MainBundle\Form\AdType;
 
 class DefaultController extends Controller
 {
@@ -26,6 +28,14 @@ class DefaultController extends Controller
 
         return $this->render('CrazysunMainBundle:Default:teasers.html.twig', array(
             'user' => 'teasers test'
+        ));
+    }
+
+    public function teasersNewAction(Request $request) {
+        $adForm = $this->createForm(new AdType());
+
+        return $this->render('CrazysunMainBundle:Default:teasersNew.html.twig', array(
+            'form' => $adForm
         ));
     }
 }

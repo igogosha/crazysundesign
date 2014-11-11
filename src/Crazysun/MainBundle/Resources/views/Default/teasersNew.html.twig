@@ -1,0 +1,21 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="grid simple">
+        <div class="grid-body no-border">
+            <h3>{{ "Create new teaser" | trans }}</h3>
+            <br>
+
+            {% block form_row %}
+                {% spaceless %}
+                    <div class="form_row">
+                        {#{{ form_label(form.url) }}#}
+                        {#{{ form_errors(form.url) }}#}
+                        {#{{ form_widget(form.url) }}#}
+                    </div>
+                {% endspaceless %}
+            {% endblock form_row %}
+
+        </div>
+    </div>
+{% endblock %}

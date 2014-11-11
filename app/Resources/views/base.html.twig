@@ -8,8 +8,8 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
             <!-- BEGIN PLUGIN CSS -->
-            {#<link href="{{ asset("bundles/crazysunmain/") }}plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen">#}
-            {#<link href="{{ asset("bundles/crazysunmain/") }}plugins/jquery-slider/css/jquery.sidr.light.css" rel="stylesheet" type="text/css" media="screen">#}
+            <link href="{{ asset("bundles/crazysunmain/") }}plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen">
+            <link href="{{ asset("bundles/crazysunmain/") }}plugins/jquery-slider/css/jquery.sidr.light.css" rel="stylesheet" type="text/css" media="screen">
             <!-- END PLUGIN CSS -->
 
             <!-- BEGIN CORE CSS FRAMEWORK -->
@@ -44,7 +44,8 @@
                     <a href=""><img width="106" height="21" data-src-retina="assets/img/logo2x.png" data-src="assets/img/logo.png" alt="" class="logo" src="assets/img/logo.png"></a>
                     <!-- END LOGO -->
                     <ul class="nav pull-right notifcation-center">
-                        <li id="header_task_bar" class="dropdown"> <a data-toggle="" class="dropdown-toggle active" href="index.html">
+                        <li id="header_task_bar" class="dropdown">
+                            <a data-toggle="" class="dropdown-toggle active" href="{{ path('_home') }}">
                                 <div class="iconset top-home"></div>
                             </a> </li>
                         <li style="display:none" id="portrait-chat-toggler" class="dropdown"> <a class="chat-menu-toggle" href="#sidr">
@@ -79,7 +80,7 @@
                 <p></p>
                 <ul>
                     <li class="start active">
-                        <a href="">
+                        <a href="{{ path('_home') }}">
                             <i class="icon-custom-home"></i>
                             <span class="title">Главная</span>
                         </a>
