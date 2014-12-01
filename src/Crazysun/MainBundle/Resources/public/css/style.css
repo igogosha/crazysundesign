@@ -14,17 +14,30 @@
 html{
 	font-size: 100%;
 	height:100%;
+    margin: 0;
 }
-body { 
-  background-color:#1B1E24 ;
+body {
+    background-color: transparent;
+    height: 100%;
+    margin: 0;
 }
 
-
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 /***
 Page header
 ***/
+
+.navbar {
+    position: fixed;
+    top: 0.5em;
+}
+
 .navbar, .navbar-inverse {
-	background-color:#fff;
+	background-color:transparent;
 	background-image:none;
 	border:none;
 	border-radius:0px;
@@ -50,6 +63,34 @@ Page header
     border-left: 6px solid transparent;
     content: '';
   }
+
+.navbar .nav > li.active > a,
+.navbar .nav > li.active > a:hover
+{
+    background: transparent;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    background: transparent;
+    border-color: transparent;
+}
+
+.navbar-collapse {
+    margin: 0 auto;
+}
+
+div.inner {
+    padding-top: 5em;
+    height:100vh;
+    width: 100%;
+    text-align: center;
+    display: table;
+}
+
+.bg-home {
+    background: #c0d33d;
+}
+
 .header-seperation{
 	background-color:#22262e;
 	
@@ -2877,7 +2918,7 @@ form legend,
     width: 50%;
 }
 .wizard-steps li.active .step,.wizard-steps li.active.complete .step  {
-	background-color: #0090D9;
+	background-color: transparent;
 	color: #FFFFFF;
     font-weight: bold;
 	padding: 10px 15px;
@@ -4785,7 +4826,7 @@ border-bottom-right-radius: 3px;
 	margin-bottom:10px;
 }
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
-	background-color:#0090d9;
+	background-color:transparent;
 }
 .nav-tabs > li > a, .nav-pills > li > a{
 	margin-right: 0px;

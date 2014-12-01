@@ -9,7 +9,12 @@ use Crazysun\MainBundle\Form\AdType;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+
+    public function indexAction() {
+        return $this->render('CrazysunMainBundle:Default:index.html.twig');
+    }
+
+    public function adminAction()
     {
 
         $user = $this->get('security.context')->getToken()->getUser();
@@ -18,7 +23,7 @@ class DefaultController extends Controller
             ->getRepository('CrazysunMainBundle:Country')
             ->findAll();
 
-        return $this->render('CrazysunMainBundle:Default:index.html.twig', array(
+        return $this->render('CrazysunMainBundle:Default:admin.html.twig', array(
             'user' => $user,
             'countriesNumber' => count($countries),
         ));

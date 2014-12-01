@@ -1,11 +1,15 @@
 _home:
-    path:     /
+    path: /
     defaults: { _controller: CrazysunMainBundle:Default:index }
 
+_home_admin:
+    path:     /admin
+    defaults: { _controller: CrazysunMainBundle:Default:admin }
+
 _ad:
-    path: /teasers
+    path: /admin/teasers
     defaults: { _controller: CrazysunMainBundle:Default:teasers }
 
 _new_ad:
-    path: /teasers/new
+    path: /admin/teasers/new
     defaults: { _controller: CrazysunMainBundle:Default:teasersNew }

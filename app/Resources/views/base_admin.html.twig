@@ -29,38 +29,87 @@
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
+    <body class="">
 
-        <div class="container">
+        <div class="header navbar navbar-inverse ">
+            <!-- BEGIN TOP NAVIGATION BAR -->
+            <div class="navbar-inner">
+                <div class="header-seperation">
+                    <ul style="display:none" id="main-menu-toggle-wrapper" class="nav pull-left notifcation-center">
+                        <li class="dropdown"> <a class="" href="#main-menu" id="main-menu-toggle">
+                                <div class="iconset top-menu-toggle-white"></div>
+                            </a> </li>
+                    </ul>
+                    <!-- BEGIN LOGO -->
+                    <a href=""><img width="106" height="21" data-src-retina="assets/img/logo2x.png" data-src="assets/img/logo.png" alt="" class="logo" src="assets/img/logo.png"></a>
+                    <!-- END LOGO -->
+                    <ul class="nav pull-right notifcation-center">
+                        <li id="header_task_bar" class="dropdown">
+                            <a data-toggle="" class="dropdown-toggle active" href="{{ path('_home') }}">
+                                <div class="iconset top-home"></div>
+                            </a> </li>
+                        <li style="display:none" id="portrait-chat-toggler" class="dropdown"> <a class="chat-menu-toggle" href="#sidr">
+                                <div class="iconset top-chat-white "></div>
+                            </a> </li>
+                    </ul>
+                </div>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <div class="header-quick-nav">
+                    <!-- BEGIN TOP NAVIGATION MENU -->
 
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
+                    <!-- END TOP NAVIGATION MENU -->
+                    <!-- BEGIN CHAT TOGGLER -->
+                    <div class="pull-right">
+                        <div class="chat-toggler">
+                            <a data-original-title="Notifications" data-toggle="dropdown" data-content="" data-placement="bottom" id="my-task-list" class="dropdown-toggle" href="#">
+                                <div class="user-details">
+                                    <div class="username">{% if app.user %}{{ app.user.email }}{% endif %}</div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Skills</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">Contacts</a></li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
-
-            {% block body %}{% endblock %}
+                    <!-- END CHAT TOGGLER -->
+                </div>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+            <!-- END TOP NAVIGATION BAR -->
         </div>
 
+        <div class="page-container row">
+            <div id="main-menu" class="page-sidebar">
+                <p></p>
+                <ul>
+                    <li class="start active">
+                        <a href="{{ path('_home') }}">
+                            <i class="icon-custom-home"></i>
+                            <span class="title">Главная</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="{{ path('_ad') }}">
+                            <i class="fa fa-stop"></i>
+                            <span class="title">{{ "Тизеры" | trans }}</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="">
+                            <i class="fa fa-th-large"></i>
+                            <span class="title">{{ "Блоки" | trans }}</span>
+                        </a>
+                    </li>
+
+                </ul>
+                <a class="scrollup" href="#" style="display: none;">Scroll</a>
+                <div class="clearfix"></div>
+                <!-- END SIDEBAR MENU -->
+            </div>
+            <div class="page-content">
+                <div class="clearfix"></div>
+                <div class="content">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
         {% block javascripts %}
             <!-- BEGIN CORE JS FRAMEWORK-->
             <script src="{{ asset("bundles/crazysunmain/") }}plugins/jquery-1.8.3.min.js" type="text/javascript"></script>
@@ -70,7 +119,7 @@
             <script src="{{ asset("bundles/crazysunmain/") }}plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
             <!-- END CORE JS FRAMEWORK -->
             <!-- BEGIN PAGE LEVEL JS -->
-            {#<script src="{{ asset("bundles/crazysunmain/") }}plugins/pace/pace.min.js" type="text/javascript"></script>#}
+            <script src="{{ asset("bundles/crazysunmain/") }}plugins/pace/pace.min.js" type="text/javascript"></script>
             <script src="{{ asset("bundles/crazysunmain/") }}plugins/jquery-block-ui/jqueryblockui.js" type="text/javascript"></script>
             <script src="{{ asset("bundles/crazysunmain/") }}plugins/jquery-slider/jquery.sidr.min.js" type="text/javascript"></script>
             <script src="{{ asset("bundles/crazysunmain/") }}plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
