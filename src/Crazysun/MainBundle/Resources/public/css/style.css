@@ -32,8 +32,11 @@ Page header
 ***/
 
 .navbar {
-    position: fixed;
-    top: 0.5em;
+    position: absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .navbar, .navbar-inverse {
@@ -79,12 +82,21 @@ Page header
     margin: 0 auto;
 }
 
+.navbar-fixed-bottom {
+    text-align: center;
+}
+
 div.inner {
-    padding-top: 5em;
+    padding-top:35vh;
     height:100vh;
     width: 100%;
     text-align: center;
-    display: table;
+}
+
+.mainPageCarousel .item h1 {
+    color: #fff;
+    font-size: 5em;
+    line-height: 1em;
 }
 
 .bg-home {
@@ -97,8 +109,7 @@ div.inner {
 }
 .header .navbar-inner {
   filter:none !important;
-  background-image: none !important;
-  background-color: #ffffff !important;
+  background: transparent;
 }
 
 .header .btn-navbar {  
@@ -7530,6 +7541,20 @@ ul.my-friends li .profile-pic{
 
 .cbp_tmtimeline .action-links li:last-child:after {
     content: "";
+}
+
+ol.carousel-indicators {
+    position: absolute;
+    top:100%;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
 }
 
 
